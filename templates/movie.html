@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+    <div class="row align-items-start">
+        <div class="col">
+            <img src="{{movie.Poster}}">
+        </div>
+        <div class="col">
+            <p class="fs-3 fw-bolder">{{ movie.Title|title }}</p>
+            <p>Rated: {{ movie.Rated|default("N/A", true) }}</p>
+            <p>Released: {{ movie.Released|default("N/A", true) }}</p>
+            <p>Rating: {{ movie.imdbRating|default("N/A", true) }}</p>
+            <p>Genre: {{ movie.Genre|default("N/A", true) }}</p>
+            <p>Director: {{ movie.Director|default("N/A", true) }}</p>
+            <p>Country: {{ movie.Country|default("N/A", true) }}</p>
+            <p>Actors: {{ movie.Actors|default("N/A", true) }}</p>
+            <p>BoxOffice: <b>{{ movie.BoxOffice|default("N/A", true)}}</b></p>
+            <cite class="cite">{{ movie.Plot}}</cite>
+        </div>
+    </div>
+
+    <form method="POST" action="/movie/{{movie.imdbID}}" id="movie-form">
+        <button class="btn {{'btn-primary' if movie.imdbID not in list else 'btn-outline-danger'}}">
+            {% if movie.imdbID in list %}
+            Remove From List
+            {% else %}
+            Add To List
+            {% endif %}
+        </button>
+    </form>
+</div>
+
+{% endblock %}

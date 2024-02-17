@@ -12,14 +12,14 @@ CREATE TABLE "directors"(
 ALTER TABLE
     "directors" ADD PRIMARY KEY("id");
 CREATE TABLE "movies"(
-    "id" SERIAL NOT NULL,
+    "id" INTEGER NOT NULL,
     "title" VARCHAR(255) NOT NULL,
-    "rated" VARCHAR(255) NOT NULL,
-    "release_year" DATE NOT NULL,
-    "sutdio_id" INTEGER NOT NULL,
-    "rating" DOUBLE PRECISION NOT NULL,
+    "rated" VARCHAR(5) NOT NULL,
+    "release_year" VARCHAR(4) NOT NULL,
+    "studio_id" INTEGER NOT NULL,
+    "rating" VARCHAR(4) NOT NULL,
     "genre" VARCHAR(255) NOT NULL,
-    "boxoffice" INTEGER NOT NULL
+    "boxoffice" VARCHAR(255) NOT NULL
 );
 ALTER TABLE
     "movies" ADD PRIMARY KEY("id");
@@ -65,6 +65,8 @@ CREATE TABLE "studios"(
 ALTER TABLE
     "studios" ADD PRIMARY KEY("id");
 ALTER TABLE
+    "studios" ADD CONSTRAINT "studios_name_unique" UNIQUE("name");
+ALTER TABLE
     "list_movies" ADD CONSTRAINT "list_movies_movie_id_foreign" FOREIGN KEY("movie_id") REFERENCES "movies"("id");
 ALTER TABLE
     "directing" ADD CONSTRAINT "directing_movie_id_foreign" FOREIGN KEY("movie_id") REFERENCES "movies"("id");
@@ -73,7 +75,7 @@ ALTER TABLE
 ALTER TABLE
     "lists" ADD CONSTRAINT "lists_user_foreign" FOREIGN KEY("user") REFERENCES "users"("username");
 ALTER TABLE
-    "movies" ADD CONSTRAINT "movies_sutdio_id_foreign" FOREIGN KEY("sutdio_id") REFERENCES "studios"("id");
+    "movies" ADD CONSTRAINT "movies_studio_id_foreign" FOREIGN KEY("studio_id") REFERENCES "studios"("id");
 ALTER TABLE
     "directing" ADD CONSTRAINT "directing_director_id_foreign" FOREIGN KEY("director_id") REFERENCES "directors"("id");
 ALTER TABLE

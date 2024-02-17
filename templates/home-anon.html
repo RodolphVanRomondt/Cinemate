@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+  <p class="display-4 text-center heading">
+    <b>Welcome To Cinemate</b>
+  <p>
+
+  <div class="row text-center">
+      {% for movie in movies %}
+      <div class="col-sm-4 movie-info">
+        <img src="{{movie.Poster}}">
+        <p>{{ movie.Title }}</p>
+      </div>
+      {% endfor %}
+
+  </div>
+
+{% endblock %}

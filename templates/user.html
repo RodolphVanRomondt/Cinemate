@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1 class="text-center">Hello {{g.user.username|upper}}</h1>
+<p>Thank you for using Cinemate. We are working to add more features to the website
+    and to bring you a more user friendly experience.</p>
+<p>Soon we will launch a new update.</p>
+
+
+<div class="d-flex justify-content-between">
+    <a href="/user/profile" class="kote btn btn-outline-primary">Edit Profile</a>
+    <form method="POST" action="/user/delete">
+        <button class="kote btn btn-outline-danger btn-sm">Delete Profile</button>
+    </form>
+</div>
+
+{% endblock %}
