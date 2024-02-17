@@ -1,7 +1,9 @@
 from models import db, List
 from app import g
 
+
 IMAGE_DEFAULT = "https://motivatevalmorgan.com/wp-content/uploads/2016/06/default-movie.jpg"
+
 
 def add_remove_list(imdbID, user_list):
 

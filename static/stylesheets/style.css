@@ -167,155 +167,6 @@ nav + .container {
   margin-bottom: 1rem;
 }
 
-/* ===================== User profile */
-
-.join-message {
-  margin-top: 100px;
-}
-
-#profile-image,
-#profile-avatar {
-  border-radius: 100%;
-  display: block;
-  margin-left: -15px;
-}
-
-#profile-image {
-  margin: 0 auto 15px;
-  width: 100%;
-}
-
-#profile-avatar {
-  width: 200px;
-  height: 200px;
-  border: 5px solid #fff;
-  margin-top: -120px;
-  z-index: 1;
-  position: relative;
-  box-shadow: 0 1px 1px rgba(136, 153, 166, 0.15);
-}
-
-.timeline-image {
-  border-radius: 48px;
-  height: 48px;
-  width: 48px;
-  margin-top: 2px;
-}
-
-.message-area,
-.timeline-image {
-  display: inline-block;
-}
-
-.message-area {
-  margin-left: 10px;
-}
-
-#warbler-hero {
-  height: 360px;
-  margin-top: -16px;
-  opacity: 0.7;
-  background-size: cover;
-  background-position: top center;
-}
-
-.full-width {
-  width: 100vw;
-  margin: 0 -50vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-}
-
-.row.full-width {
-  background-color: #fff;
-  margin-top: -80px;
-  margin-bottom: 1rem;
-  border-bottom: 1px solid #ccc;
-  border-top: 1px solid #ccc;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
-  height: 60px;
-  align-items: center;
-}
-
-.user-stats > .ml-auto {
-  display: flex;
-  align-items: center;
-}
-
-.user-stats > .ml-auto .btn {
-  min-width: 105px;
-  padding: 6px 16px;
-}
-
-.stat {
-  text-align: center;
-  height: 60px;
-  box-sizing: border-box;
-  padding: 14px 15px 7px;
-  line-height: 1;
-}
-
-.stat > .small {
-  color: #657786;
-  font-weight: bold;
-  font-size: 12px;
-  letter-spacing: 0.02em;
-  margin-bottom: 0;
-}
-
-.stat > .small + h4 {
-  font-size: 18px;
-  font-weight: bold;
-  padding-top: 3px;
-}
-
-#messages {
-  position: relative;
-}
-
-#messages .message-link {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
-}
-
-#messages .list-group-item a:not(.message-link) {
-  position: relative;
-  z-index: 2;
-}
-
-#messages .list-group-item {
-  display: flex;
-  align-items: flex-start;
-  padding: 7px 20px 12px;
-}
-
-#messages:not(.no-hover) .list-group-item:hover {
-  background-color: #e6ecf0;
-}
-
-#sidebar-username {
-  margin-top: 30px;
-  font-size: 21px;
-  font-weight: bold;
-  line-height: 28px;
-  word-wrap: break-word;
-}
-
-@media (max-width: 768px) {
-  .full-width .user-stats .stat {
-    display: none;
-  }
-}
-
-.user-location {
-  color: #657786;
-}
-
 /* ============================ Signed out home */
 
 .home-hero {
@@ -328,14 +179,8 @@ nav + .container {
   top: 0;
   width: 100vw;
   left: 0;
-  /* z-index: -1; */
-  /* background-image: url("/static/images/signed-out-home.jpg"); */
-  /* background-size: cover; */
-  /* background-position: center center; */
   color: #fff;
-  /* text-align: center; */
   padding: 1rem;
-  /* text-shadow: 0 0 8px #66757f; */
 }
 
 .home-hero .btn {
@@ -358,43 +203,6 @@ nav + .container {
   bottom: 0;
   background: rgba(255, 255, 255, 0.3);
 }
-
-/* ============================== Signed in Home */
-
-/* #home-aside > .user-card {
-  margin-top: 0;
-  overflow: hidden;
-}
-
-#home-aside > .user-card .card-link {
-  display: flex;
-}
-
-#home-aside > .user-card .card-link > p {
-  margin-left: 0.5rem;
-  margin-top: 0.25rem;
-}
-
-#home-aside > .user-card .stat {
-  padding: 14px 0 7px;
-}
-
-#home-aside > .user-card .user-stats {
-  display: flex;
-  justify-content: space-around;
-}
-
-#home-aside > .user-card > div {
-  width: 100%;
-}
-
-#home-aside .card-link > p {
-  position: relative;
-}
-
-#home-aside .stat h4 {
-  text-align: left;
-} */
 
 /* ========================== Signup/Login */
 
@@ -435,16 +243,8 @@ nav + .container {
   flex: 1;
 }
 
-
-
-
-p {
-  color: black;
-}
-
 img {
   width: 90%;
-  /* height: 75%; */
 }
 
 .row {
@@ -453,12 +253,6 @@ img {
   margin-top: 20px;
 }
 
-.movie-center {
-  /* width: ; */
-  /* margin-left: 100px; */
-}
-
-.movie-info {
+/* .movie-info {
   position: relative;
-  /* margin-left: 100px; */
-}
+} */
