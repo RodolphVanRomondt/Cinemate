@@ -4,7 +4,9 @@ bcrypt==3.1.4
 beautifulsoup4==4.12.3
 blinker==1.4
 bs4==0.0.2
+certifi==2024.2.2
 cffi==1.14.2
+charset-normalizer==3.3.2
 Click==7.0
 decorator==4.3.0
 Faker==0.9.1
@@ -14,6 +16,7 @@ Flask-DebugToolbar==0.10.1
 Flask-SQLAlchemy==2.3.2
 Flask-WTF==0.14.2
 gunicorn==21.2.0
+idna==3.6
 importlib-metadata==6.7.0
 ipython==7.0.1
 ipython-genutils==0.2.0
@@ -31,6 +34,7 @@ ptyprocess==0.6.0
 pycparser==2.19
 Pygments==2.2.0
 python-dateutil==2.7.3
+requests==2.31.0
 simplegeneric==0.8.1
 six==1.11.0
 soupsieve==2.4.1
@@ -38,6 +42,7 @@ SQLAlchemy==1.2.12
 text-unidecode==1.2
 traitlets==4.3.2
 typing_extensions==4.7.1
+urllib3==2.0.7
 wcwidth==0.1.7
 Werkzeug==0.14.1
 WTForms==2.2.1
