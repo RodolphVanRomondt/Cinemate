@@ -81,8 +81,10 @@ def signup():
         try:
             user = User.signup(
                 username=form.username.data,
-                password=form.password.data,
+                image_url=form.image_url.data,
+                password=form.password.data
             )
+    
             db.session.commit()
 
         except IntegrityError:
@@ -303,8 +305,6 @@ def homepage():
     - logged in: 100 most recent messages of followed_users
     """
 
-    print(g.user)
-
     movies = Movie.query.all()
 
     movie_api = []
@@ -322,9 +322,9 @@ def homepage():
 
     if CURR_USER_KEY not in session:
 
-        return render_template("home-anon.html", movies=movie_api[:9])
+        return render_template("home-anon.html", movies=movie_api[:12])
     
-    return render_template('home.html', movies=movie_api[:9])
+    return render_template('home.html', movies=movie_api[:12])
 
 
 ##############################################################################

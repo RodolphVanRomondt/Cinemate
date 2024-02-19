@@ -11,7 +11,7 @@ $("body").on("click", ".movie-info", function () {
     $(this).width(600)
     $(".row").html(event).addClass("movie-center");
 
-    $(".heading b").html("<b>Log In</b> to search for a specific movie and/or add a movie to a list");
+    $(".heading b").html("<b>Sign Up/Log In</b> to search for a specific movie and/or add a movie to a list");
 });
 
 

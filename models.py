@@ -37,7 +37,7 @@ class User(db.Model):
         return f"<User: {self.username}>"
 
     @classmethod
-    def signup(cls, username, password):
+    def signup(cls, username, image_url, password):
         """Sign up user.
 
         Hashes password and adds user to system.
@@ -45,7 +45,7 @@ class User(db.Model):
 
         hashed_pwd = bcrypt.generate_password_hash(password).decode('UTF-8')
 
-        user = User(username=username, password=hashed_pwd)
+        user = User(username=username, image_url=image_url, password=hashed_pwd)
         db.session.add(user)
 
         return user

@@ -48,7 +48,7 @@ cite {
   color: #66757f;
   font-size: 13px;
   font-weight: bold;
-  text-decoration: none;
+  /* text-decoration: none; */
 }
 
 .navbar a:hover {
@@ -253,6 +253,6 @@ img {
   margin-top: 20px;
 }
 
-/* .movie-info {
-  position: relative;
-} */
+a {
+  text-decoration: none;
+}
