@@ -71,7 +71,7 @@ def signup():
 
     If form not valid, present form.
 
-    If the there already is a user with that username: flash message
+    If there is already a user with that username: flash message
     and re-present form.
     """
 
@@ -134,7 +134,7 @@ def logout():
 
 @app.route('/user/<username>')
 def user_show(username):
-    """Profile for current user."""
+    """ Profile for current user. """
 
     if not g.user:
         flash("Access unauthorized.", "danger")
@@ -150,7 +150,7 @@ def user_show(username):
 
 @app.route('/user/profile', methods=["GET", "POST"])
 def profile():
-    """Update profile for current user."""
+    """ Update profile for current user. """
 
     if not g.user:
         flash("Access unauthorized.", "danger")
@@ -188,7 +188,7 @@ def profile():
 
 @app.route('/user/delete', methods=["POST"])
 def delete_user():
-    """Delete user."""
+    """ Delete user. """
 
     if not g.user:
         flash("Access unauthorized.", "danger")
@@ -206,6 +206,7 @@ def delete_user():
 
 @app.route("/mylist")
 def user_list():
+    """ Show the log in user's watchlist. """
 
     if not g.user:
         flash("Access unauthorized.", "danger")
@@ -261,6 +262,7 @@ def movie_search():
 
 @app.route("/movie/<imdbID>")
 def movie_detail_get(imdbID):
+    """ Show a specific movie by its imdbID. """
 
     if not g.user:
         flash("Access unauthorized.", "danger")
@@ -301,8 +303,8 @@ def movie_detail_post(imdbID):
 def homepage():
     """Show homepage:
 
-    - anon users: no messages
-    - logged in: 100 most recent messages of followed_users
+    - anon users: no search bar
+    - show 12 random movies
     """
 
     movies = Movie.query.all()
