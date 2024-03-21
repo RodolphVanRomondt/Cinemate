@@ -306,10 +306,11 @@ def homepage():
     """
 
     movies = Movie.query.all()
+    random.shuffle(movies)
 
     movie_api = []
 
-    for movie in movies:
+    for movie in movies[:12]:
 
         res = requests.get(f"{URL_SEARCH}", params={"i": movie.id}).json()
 
@@ -318,13 +319,11 @@ def homepage():
         
         movie_api.append(res)
 
-    random.shuffle(movie_api)
-
     if CURR_USER_KEY not in session:
 
-        return render_template("home-anon.html", movies=movie_api[:12])
+        return render_template("home-anon.html", movies=movie_api)
     
-    return render_template('home.html', movies=movie_api[:12])
+    return render_template('home.html', movies=movie_api)
 
 
 ##############################################################################
