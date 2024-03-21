@@ -3,7 +3,7 @@
 [https://cinemate-app.onrender.com](https://cinemate-app.onrender.com)
 
 ## Description
-This is a website that we allow its users to search for a specific movie and have information about it.
+This is a website that will allow its users to search for a specific movie and have information about it.
 
 ## Features
 - Allow users to create a profile
