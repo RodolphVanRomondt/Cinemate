@@ -5,6 +5,15 @@
     <div class="row align-items-start">
         <div class="col">
             <img src="{{movie.Poster}}">
+            <form method="POST" action="/movie/{{movie.imdbID}}" id="movie-form">
+                <button class="btn {{'btn-primary' if movie.imdbID not in list else 'btn-outline-danger'}}">
+                    {% if movie.imdbID in list %}
+                    Remove From List
+                    {% else %}
+                    Add To List
+                    {% endif %}
+                </button>
+            </form>
         </div>
         <div class="col">
             <p class="fs-3 fw-bolder">{{ movie.Title|title }}</p>
@@ -20,15 +29,7 @@
         </div>
     </div>
 
-    <form method="POST" action="/movie/{{movie.imdbID}}" id="movie-form">
-        <button class="btn {{'btn-primary' if movie.imdbID not in list else 'btn-outline-danger'}}">
-            {% if movie.imdbID in list %}
-            Remove From List
-            {% else %}
-            Add To List
-            {% endif %}
-        </button>
-    </form>
+    
 </div>
 
 {% endblock %}

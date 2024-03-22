@@ -23,7 +23,8 @@ app = Flask(__name__)
 # Get DB_URI from environ variable (useful for production/testing) or,
 # if not set there, use development local db.
 app.config['SQLALCHEMY_DATABASE_URI'] = (
-    os.environ.get('DATABASE_URL', 'postgresql:///capstone_1_db'))
+        os.environ.get('DATABASE_URL', 'postgresql:///capstone_1_db')
+    )
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = False
@@ -32,7 +33,6 @@ app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', "it's a secret")
 # toolbar = DebugToolbarExtension(app)
 
 connect_db(app)
-
 
 
 ##############################################################################
@@ -84,7 +84,7 @@ def signup():
                 image_url=form.image_url.data,
                 password=form.password.data
             )
-    
+
             db.session.commit()
 
         except IntegrityError:
@@ -162,18 +162,18 @@ def profile():
 
     if form.validate_on_submit():
         user = User.authenticate(username, form.password.data)
-    
+
         if user:
             try:
                 user.username = form.username.data
                 user.image_url = form.image_url.data or User.image_url.default.arg
 
                 db.session.commit()
-            
+
             except IntegrityError:
                 flash("Username already taken!", "danger")
                 return redirect("/")
-            
+
             g.user = user
             session[CURR_USER_KEY] = user.username
 
@@ -193,7 +193,7 @@ def delete_user():
     if not g.user:
         flash("Access unauthorized.", "danger")
         return redirect("/")
-    
+
     User.query.filter_by(username = g.user.username).delete()
 
     do_logout()
@@ -255,7 +255,7 @@ def movie_search():
 
         random.shuffle(resM)
         return render_template("movie_search.html", movies=resM)
-    
+
     flash(res["Error"].title(), "info")
     return redirect("/")
 
@@ -267,7 +267,7 @@ def movie_detail_get(imdbID):
     if not g.user:
         flash("Access unauthorized.", "danger")
         return redirect("/")
-    
+
     m_db = Movie.query.filter(Movie.id == imdbID).first()
 
     if not m_db:
@@ -318,13 +318,13 @@ def homepage():
 
         if res["Poster"] == "N/A":
             res["Poster"] = IMAGE_DEFAULT
-        
+
         movie_api.append(res)
 
     if CURR_USER_KEY not in session:
 
         return render_template("home-anon.html", movies=movie_api)
-    
+
     return render_template('home.html', movies=movie_api)
 
 

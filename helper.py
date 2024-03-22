@@ -13,7 +13,7 @@ def add_remove_list(imdbID, user_list):
         list = List(user_id=g.user.id, movie_id=imdbID)
 
         db.session.add(list)
-    
+
     else:
         List.query.filter(List.movie_id == imdbID).delete()
 
