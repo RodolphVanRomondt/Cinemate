@@ -11,48 +11,47 @@
   <script src="https://unpkg.com/bootstrap"></script>
 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-  <link rel="stylesheet" href="/static/stylesheets/style.css">
+  <!-- <link rel="stylesheet" href="/static/stylesheets/style.css"> -->
+  <link rel="stylesheet" href="/static/stylesheets/app.css">
   <link rel="shortcut icon" href="/static/images/movie_logo_WDY_icon.ico">
 </head>
 
 <body class="{% block body_class %}{% endblock %}">
-  <nav class="navbar navbar-expand">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a href="/" class="navbar-brand">
-          <img src="/static/images/movie-logo.jpg" alt="logo">
-          <span>Cinemate</span>
-        </a>
-      </div>
-      <ul class="nav navbar-nav navbar-right">
-        <!-- {% if request.endpoint != None %} -->
 
-        <!-- {% endif %} -->
-        {% if not g.user %}
-        <li><a href="/signup">Sign up</a></li>
-        <li><a href="/login">Log in</a></li>
-        {% else %}
-
-        <li>
-          <form class="navbar-form navbar-right" action="/movie">
-            <input name="s" class="form-control" placeholder="Search Cinemate" id="search">
-            <button class="btn btn-default">
-              <span class="fa fa-search"></span>
-            </button>
-          </form>
-        </li>
-      
-        <li>
-          <a href="/user/{{ g.user.username }}">
-            <img src="{{ g.user.image_url }}" alt="{{ g.user.username }}">
-          </a>
-        </li>
-        <li><a href="/mylist">My List</a></li>
-        <li><a href="/logout">Log out</a></li>
-        {% endif %}
-      </ul>
+  <header>
+    <div>
+      <a href="/" class="">
+        <img src="/static/images/movie-logo.jpg" alt="logo">
+        <span>Cinemate</span>
+      </a>
     </div>
-  </nav>
+
+    {% if not g.user %}
+    <div>
+      <a href="/signup" class="">Sign up</a>
+      <a href="/login" class="">Log in</a>
+    </div>
+    {% else %}
+    
+    <div>
+      <form class="" action="/movie">
+        <input name="s" class="" placeholder="Search Cinemate" id="search">
+        <button class="">
+          <span class="fa fa-search"></span>
+        </button>
+      </form>
+    </div>
+    
+    <div>
+      <a href="/user/{{ g.user.username }}">
+        <img class="profile" src="{{ g.user.image_url }}" alt="{{ g.user.username }}">
+      </a>
+      <a href="/mylist" class="">My List</a>
+      <a href="/logout" class="">Log out</a>
+    </div>
+    {% endif %}
+  </header>
+
   <div class="container">
 
   {% for category, message in get_flashed_messages(with_categories=True) %}

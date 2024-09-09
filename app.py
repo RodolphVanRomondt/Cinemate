@@ -10,7 +10,6 @@ from helper import IMAGE_DEFAULT, add_remove_list
 
 from forms import UserAddForm, LoginForm, EditForm
 from models import db, connect_db, User, Movie, List
-# from functions import add_remove_like
 
 CURR_USER_KEY = "curr_user"
 
@@ -304,7 +303,7 @@ def homepage():
     """Show homepage:
 
     - anon users: no search bar
-    - show 12 random movies
+    - show 15 random movies
     """
 
     movies = Movie.query.all()
@@ -312,7 +311,7 @@ def homepage():
 
     movie_api = []
 
-    for movie in movies[:12]:
+    for movie in movies[:15]:
 
         res = requests.get(f"{URL_SEARCH}", params={"i": movie.id}).json()
 

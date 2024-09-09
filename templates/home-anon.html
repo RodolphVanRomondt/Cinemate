@@ -1,18 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
 
-  <p class="display-4 text-center heading">
-    <b>Welcome To Cinemate</b>
-  <p>
+  <h1 class="heading">Welcome To Cinemate<h1>
 
-  <div class="row text-center">
+  <div class="movie-grid">
       {% for movie in movies %}
-      <div class="col-sm-3 movie-info">
+      <div class="movie-poster">
         <img src="{{movie.Poster}}">
-        <p>{{ movie.Title }}</p>
+        <h3>{{ movie.Title }}</h3>
       </div>
       {% endfor %}
-
   </div>
 
 {% endblock %}

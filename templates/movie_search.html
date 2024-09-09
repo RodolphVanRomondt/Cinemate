@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="row text-center">
+<div class="movie-grid">
     {% for movie in movies %}
-    <div class="col-sm-4">
+    <div class="movie-card">
         <a href="/movie/{{movie.imdbID}}">
             <img src="{{movie.Poster}}">
-            <p>{{ movie.Title }}</p>
         </a>
+        <h3>{{ movie.Title }}</h3>
     </div>
     {% endfor %}
 </div>

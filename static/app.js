@@ -2,22 +2,23 @@
 const api_url = "http://www.omdbapi.com/?apikey=b3726a50&";
 
 
-$("body").on("click", ".movie-info", function () {
-    const event = this
+$("body").on("click", ".movie-poster", function () {
+    const event = this;
+
+    $(".container").html("")
+    $(this).width(600)
+        .addClass("movie-home")
+        // .removeClass("movie-poster");
+    $(".container")
+        .append("<h1><b>Sign Up/Log In</b> to search for a specific movie and/or add a movie to a list</h1>")
+        .append(event);
 
     console.log(this);
-
-    $(".row").text("");
-    $(this).width(600)
-    $(".row").html(event).addClass("movie-center");
-
-    $(".heading b").html("<b>Sign Up/Log In</b> to search for a specific movie and/or add a movie to a list");
 });
 
 
 async function getMovie(s, api_url) {
     const result = await axios.get(api_url, { params: { s } });
-
     return result.data;
 }
 

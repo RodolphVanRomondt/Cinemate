@@ -3,21 +3,21 @@
 
 {% if movies %}
 
-<div class="row text-center">
+<div class="movie-grid">
     {% for movie in movies %}
-    <div class="{{ 'col-sm-2' if movies|length > 12 else 'col-sm-3' }}">
+    <div class="movie-card">
         <a href="/movie/{{movie.imdbID}}">
             <img src="{{movie.Poster}}">
-            <p>{{ movie.Title }}</p>
         </a>
+        <h3>{{ movie.Title }}</h3>
     </div>
     {% endfor %}
 </div>
 
 {% else %}
-    <p class="display-4 text-center">
-        <b>Your list is empty</b>
-    <p>
+    <h1 class="display-1">
+        Your list is empty
+    <h1>
 {% endif %}
 
 {% endblock %}

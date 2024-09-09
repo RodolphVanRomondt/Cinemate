@@ -37,7 +37,7 @@ cite {
 
 .navbar {
   background-color: #fff;
-  height: 50px;
+  height: 60px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.25);
   margin-bottom: 1rem;
   position: relative;
@@ -70,8 +70,12 @@ cite {
 }
 
 .nav > li > a > img {
-  width: 32px;
-  border-radius: 32px;
+  /* width: 32px;
+  border-radius: 32px; */
+
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
 }
 
 ul.nav.navbar-nav {
